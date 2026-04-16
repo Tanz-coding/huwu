@@ -3,7 +3,6 @@ import { Menu } from "antd";
 import { useSelector } from "react-redux";
 import { useNavigate, useLocation } from "react-router-dom";
 import styles from "./index.module.less";
-import logo from "../../assets/logo.png";
 
 function getItem(
   label: any,
@@ -23,14 +22,6 @@ function getItem(
   };
 }
 const items = [
-  getItem(
-    "首页概览",
-    "/",
-    <i className={`iconfont icon-icon-home`} />,
-    null,
-    null,
-    null
-  ),
   getItem(
     "分类管理",
     "/resource-category",
@@ -95,14 +86,6 @@ const items = [
     ],
     null,
     null
-  ),
-  getItem(
-    "使用许可",
-    "/licensing",
-    <i className="iconfont icon-xuke" />,
-    null,
-    null,
-    null,
   ),
 ];
 
@@ -221,22 +204,6 @@ export const LeftMenu: React.FC = () => {
 
   return (
     <div className={styles["left-menu"]}>
-      <div
-        style={{
-          textDecoration: "none",
-          cursor: "pointer",
-          position: "sticky",
-          top: 0,
-          zIndex: 10,
-          background: "#fff",
-        }}
-        onClick={() => {
-          window.location.href = "/";
-        }}
-      >
-        {/* 此处为版权标识，严禁删改 */}
-        <img src={logo} className={styles["App-logo"]} />
-      </div>
       <div className={styles["menu-box"]}>
         <Menu
           onClick={onClick}
